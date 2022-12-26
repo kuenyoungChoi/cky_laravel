@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Client\Client;
 use App\Models\Client\ClientPlayer;
 use App\Models\Player\Player;
+use App\Models\Prod\Prod;
 use App\Models\PurOrder\PurOrder;
 use App\Models\Quest\Quest;
 use App\Models\User\User;
@@ -31,6 +32,8 @@ class DatabaseSeeder extends Seeder
             Quest::truncate();
             ClientPlayer::truncate();
             PurOrder::truncate();
+            Prod::truncate();
+            PurOrder::truncate();
 
         } catch (\Exception $e) {
             dump($e->getMessage());
@@ -43,6 +46,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(PurOrderSeeder::class);
         $this->call(PaymentSeeder::class);
+        $this->call(ProdsTableSeeder::class);
 
         if (config('database.default') !== 'sqlite') {
             DB::statement('SET FOREIGN_KEY_CHECKS=1');

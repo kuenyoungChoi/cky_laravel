@@ -38,7 +38,8 @@ class PaymentsController extends Controller
     {
 
         $outs = Payment::create([
-           'title' => $request->title
+           'title' => $request->title,
+            'user_id' => $request->user_id
         ]);
 
         return new PaymentResource($outs);

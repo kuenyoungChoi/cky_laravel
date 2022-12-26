@@ -15,8 +15,8 @@ class Payment extends Model
         'user_id',
     ];
 
-    public function user(){
-        return $this->hasOne(User::class);
-    }
+//    public function user(){
+//        return $this->hasOne(User::class);
+//    }
 
 }

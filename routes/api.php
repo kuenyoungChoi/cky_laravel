@@ -18,6 +18,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/greeting', function () {
+    return 'Hello World';
+});
+
 //Route::get('/players', [\App\Http\Controllers\Api\v1\Player\PlayersController::class, 'getPlayers']);
 //
 
@@ -37,22 +41,19 @@ Route::get('/users', [\App\Http\Controllers\Api\v1\User\UsersController::class, 
 
 
 Route::apiResources([
-    'quests' => \App\Http\Controllers\Api\v1\Quest\QuestsController::class,
+    '/quests' => \App\Http\Controllers\Api\v1\Quest\QuestsController::class,
 
-    'players' => \App\Http\Controllers\Api\v1\Player\PlayersController::class,
+    '/players' => \App\Http\Controllers\Api\v1\Player\PlayersController::class,
 
-    'clients' => \App\Http\Controllers\Api\v1\Client\ClientsController::class,
+    '/clients' => \App\Http\Controllers\Api\v1\Client\ClientsController::class,
 
-    'purOrders' => \App\Http\Controllers\Api\v1\PurOrder\PurOrdersController::class,
+    '/purOrders' => \App\Http\Controllers\Api\v1\PurOrder\PurOrdersController::class,
 
-    'payments' => \App\Http\Controllers\Api\v1\Payment\PaymentsController::class,
+    '/payments' => \App\Http\Controllers\Api\v1\Payment\PaymentsController::class,
 
-    'users' => \App\Http\Controllers\Api\v1\User\UsersController::class,
+    '/users' => \App\Http\Controllers\Api\v1\User\UsersController::class,
 
-
-
-
-
+    '/prods' => \App\Http\Controllers\Api\v1\Prod\ProdsController::class,
 
 ]);
 
